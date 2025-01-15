@@ -1,0 +1,19 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace IPMS.API.Dtos
+{
+    public class RegistrationDto
+    {
+        [Required]
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [MinLength(6, ErrorMessage = "Password should be atleast six characters in length")]
+        public string Password { get; set; }
+    }
+}
